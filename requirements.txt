@@ -1,0 +1,11 @@
+# Core --- the CPU-only reproduction (all of reproduce.sh + the tests) needs only these.
+numpy>=1.24            # tested with 2.4.6
+torch>=2.0            # tested with 2.12.0+cpu  (the CPU build is sufficient; no GPU needed)
+pytest>=7.4          # tested with 9.0.3
+
+# Optional --- only for the LIVE LLM head-to-head experiments (need API keys in .env;
+# the cached o3 + Sonnet transcripts in results/ make those numbers reproducible without
+# any API access --- see the README).
+anthropic>=0.40      # tested with 0.105.2
+openai>=1.50         # tested with 2.40.0
+python-dotenv>=1.0   # tested with 1.2.2

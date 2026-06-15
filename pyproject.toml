@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pce-abduction"
+version = "0.1.0"
+description = "Abduction: a reasoning axis where learned simulation and frontier LLMs dissociate"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Brian Sam-Bodden", email = "bsbodden@gmail.com" }]
+
+# Core: the CPU-only reproduction (reproduce.sh + tests) needs only these.
+dependencies = [
+    "numpy>=1.24",   # tested with 2.4.6
+    "torch>=2.0",    # tested with 2.12.0+cpu (CPU build suffices; no GPU needed)
+    "pytest>=7.4",   # tested with 9.0.3
+]
+
+[project.optional-dependencies]
+# Only for the LIVE LLM head-to-heads (need API keys in .env). The cached transcripts
+# in results/ make every paper number reproduce without API access -- see the README.
+llm = [
+    "anthropic>=0.105",   # >=0.105 for adaptive-thinking + output_config (Opus 4.8)
+    "openai>=1.50",       # tested with 2.40.0
+    "python-dotenv>=1.0",
+]
+
+[project.urls]
+Repository = "https://github.com/integrallis/abduction-dissociation"
+
+[tool.setuptools]
+packages = ["pce", "pce.ca", "pce.sok"]

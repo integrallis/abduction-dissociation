@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Secrets / local config
+.env
+.env.*
+
+# Experiment outputs (the committed results/ca018.jsonl is the one exception, force-added)
+results/*.csv
+results/*.txt
+results/*.log
+
+# LaTeX build artifacts (paper/)
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+
+# OS
+.DS_Store

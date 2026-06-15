@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this code or its findings, please cite the paper."
+title: "Abduction: a reasoning axis where learned simulation and unaided frontier LLMs dissociate"
+authors:
+  - family-names: "Sam-Bodden"
+    given-names: "Brian"
+date-released: 2026-06-07
+license: MIT
+repository-code: "https://github.com/integrallis/abduction-dissociation"
+keywords:
+  - abduction
+  - inverse inference
+  - simulation-based inference
+  - large language models
+  - reasoning evaluation
+  - cellular automata
+  - Sokoban
