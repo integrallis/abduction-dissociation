@@ -1,0 +1,50 @@
+% FIGURE 1 --- the capability dissociation across the three reasoning axes.
+% Conceptual "money figure": a 2x3 capability matrix with the abduction column
+% highlighted, above a compact schematic of the three operations on a trajectory.
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[font=\small]
+    % --- the capability matrix ---
+    \matrix (m) [matrix of nodes,
+        nodes={minimum width=2.5cm, minimum height=0.85cm, anchor=center,
+               draw=gray!40, inner sep=3pt},
+        column 1/.style={nodes={draw=none, text width=3.5cm, align=right}},
+        row 1/.style={nodes={draw=none, font=\bfseries}},
+        column sep=-\pgflinewidth, row sep=-\pgflinewidth]
+    {
+                                  & forward & control & abduction \\
+      learned simulation (ours)   & \pass   & \pass   & \pass     \\
+      frontier LLM (e.g.\ o3)     & \pass   & \pass   & \fail     \\
+    };
+    % shade + outline the abduction column (the gap, and the paper's subject)
+    \begin{scope}[on background layer]
+      \fill[orange!12] (m-1-4.north west) rectangle (m-3-4.south east);
+    \end{scope}
+    \draw[orange!75!red, very thick, rounded corners=1.5pt]
+      (m-1-4.north west) rectangle (m-3-4.south east);
+
+    % --- compact schematic of the three operations on a trajectory ---
+    \begin{scope}[yshift=-2.55cm, font=\footnotesize]
+      \node (x0) at (-3.0,0) {$x_0$};
+      \node (xt) at (-0.2,0) {$x_T$};
+      \draw[-{Latex[length=2mm]}, thick] (x0) -- (xt)
+        node[midway, above=1pt] {forward: apply the rule};
+      \node (g)  at (1.6,0) {goal};
+      \draw[-{Latex[length=2mm]}, thick] (0.4,0) -- (g)
+        node[midway, above=1pt] {control};
+      % the inverse: a curved arrow running backward
+      \node (obs) at (4.9,0) {noisy $x_{0:T}$};
+      \node (xh)  at (3.0,-0.05) {$\hat{x}_0$};
+      \draw[-{Latex[length=2mm]}, thick, orange!75!red]
+        (obs) to[out=200,in=-20] (xh.east);
+      \node[orange!75!red] at (4.0,-0.78) {\textbf{abduction}: recover the start};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{\textbf{The dissociation.} A reasoner can run a dynamical
+  world \emph{forward}, \emph{control} it toward a target, or \emph{abduct} the initial
+  condition from a noisy trajectory (the inverse). A frontier reasoning model (o3) closes
+  the two forward-facing axes it shares with our learned-simulation reasoner, but not the
+  inverse one. Our reasoner closes all three, sitting at the true-dynamics recoverability
+  oracle. The orange column is the abduction gap.}
+  \label{fig:dissociation}
+\end{figure}

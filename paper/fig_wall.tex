@@ -1,0 +1,30 @@
+% FIGURE 2 --- The inverted wall (likelihood gap per bit, with error bars)
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        width=0.8\linewidth,
+        height=0.55\linewidth,
+        xlabel={Horizon $H$},
+        ylabel={Likelihood gap per bit},
+        xtick={8,12,16,20},
+        ymin=0, ymax=0.11,
+        legend pos=north west,
+        legend cell align={left},
+        grid=major,
+        mark size=2.5pt,
+      ]
+      % data: data/wall.csv (regenerate via experiments/ca_inverted_wall.py)
+      \addplot+[thick, error bars/.cd, y dir=both, y explicit]
+        table[x=H, y=r110, y error=r110_err, col sep=comma] {data/wall.csv};
+      \addlegendentry{Rule 110}
+      \addplot+[thick, error bars/.cd, y dir=both, y explicit]
+        table[x=H, y=r90, y error=r90_err, col sep=comma] {data/wall.csv};
+      \addlegendentry{Rule 90}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The inverted wall: irreducible Rule 110 opens a wider, growing
+  identifiability gap than reducible Rule 90 (the ordering holds on the worst of 5 seeds). Mean $\pm$ std over
+  5 seeds; observation noise $0.2$.}
+  \label{fig:wall}
+\end{figure}

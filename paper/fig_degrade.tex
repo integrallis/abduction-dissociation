@@ -1,0 +1,29 @@
+% FIGURE 3 --- Degrade-to-chance: recovery tracks model fidelity
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        width=0.8\linewidth,
+        height=0.55\linewidth,
+        xlabel={Learned-model fidelity (whole-config)},
+        ylabel={Abduction recovery},
+        xmin=-0.02, xmax=1.02,
+        ymin=-0.02, ymax=1.0,
+        ytick={0,0.2,0.4,0.6,0.8,1.0},
+        legend pos=north west,
+        legend cell align={left},
+        grid=major,
+        mark size=2.5pt,
+      ]
+      % data: data/degrade.csv (regenerate via experiments/ca_load_bearing.py)
+      \addplot+[thick] table[x=fidelity, y=recovery, col sep=comma] {data/degrade.csv};
+      \addlegendentry{recovery}
+      \addplot[dashed, thick, domain=-0.02:1.02, samples=2] {0.05};
+      \addlegendentry{raw-frame floor}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Degrade-to-chance: abduction recovery tracks the learned model's
+  fidelity and collapses to the floor when degraded. The dashed line marks the
+  raw-frame floor at $0.05$ (random-IC chance is $\approx 1.5\times10^{-5}$).}
+  \label{fig:degrade}
+\end{figure}

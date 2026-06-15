@@ -1,0 +1,18 @@
+% figures.tex --- preamble-safe figure setup, \input after the package preamble.
+% Requires (already loaded in main.tex): \usepackage{pgfplots}; \pgfplotsset{compat=1.18}.
+%
+% This file holds ONLY preamble-safe declarations (no figure floats). The three
+% figure floats live in fig_widens.tex, fig_wall.tex, and fig_degrade.tex and are
+% \input at their placement points in the document body.
+
+% pgfplots libraries used by the figures.
+\usepgfplotslibrary{groupplots}
+
+% TikZ libraries for the conceptual Figure 1 (capability matrix).
+\usetikzlibrary{matrix,backgrounds,arrows.meta,positioning,fit,calc}
+
+% Pass/fail glyphs for the dissociation matrix (\checkmark needs amssymb, loaded in main.tex).
+\newcommand{\pass}{\textcolor{green!55!black}{\checkmark}}
+\newcommand{\fail}{\textcolor{red!75!black}{\boldmath$\times$}}
+
+% (No \begin{figure} content here: floats may not appear before \begin{document}.)

@@ -1,0 +1,31 @@
+% FIGURE 1 --- CA abduction gap widens with horizon
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        width=0.8\linewidth,
+        height=0.55\linewidth,
+        xlabel={Trajectory horizon $H$},
+        ylabel={Exact joint recovery rate},
+        xtick={6,12,18},
+        ymin=-0.05, ymax=1.05,
+        ytick={0,0.2,0.4,0.6,0.8,1.0},
+        legend pos=north west,
+        legend cell align={left},
+        grid=major,
+        mark size=2.5pt,
+      ]
+      % data: data/widens.csv (regenerate via experiments/ca_scaling_llm.py --aggregate-only)
+      \addplot+[thick] table[x=H, y=ours, col sep=comma] {data/widens.csv};
+      \addlegendentry{ours}
+      \addplot+[thick] table[x=H, y=o3, col sep=comma] {data/widens.csv};
+      \addlegendentry{o3}
+      \addplot+[thick] table[x=H, y=sonnet, col sep=comma] {data/widens.csv};
+      \addlegendentry{Sonnet}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The CA abduction gap widens with trajectory length: ours rises while
+  the LLMs degrade. Pooled over both rules, $n=30$ per cell; exact joint
+  recovery rate.}
+  \label{fig:widens}
+\end{figure}

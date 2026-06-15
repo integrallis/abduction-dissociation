@@ -1,0 +1,110 @@
+% FIGURE --- a worked abduction instance: real Rule-110, L=8, H=8, noise 0.2, seed 2.
+% The reasoner sees only the noisy trajectory (12/72 bits flipped) and recovers (x0,x1) exactly.
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[font=\footnotesize, >={Latex[length=1.8mm]}]
+    \node[anchor=south, font=\small] at (1.2,0.12) {observed noisy trajectory};
+  \fill[black] (0.00,0.00) rectangle (0.30,-0.30);
+  \fill[black] (0.90,0.00) rectangle (1.20,-0.30);
+  \fill[black] (1.50,0.00) rectangle (1.80,-0.30);
+  \fill[black] (0.30,-0.30) rectangle (0.60,-0.60);
+  \fill[black] (0.60,-0.30) rectangle (0.90,-0.60);
+  \fill[black] (1.20,-0.30) rectangle (1.50,-0.60);
+  \fill[black] (1.80,-0.30) rectangle (2.10,-0.60);
+  \fill[black] (0.30,-0.60) rectangle (0.60,-0.90);
+  \fill[black] (1.50,-0.60) rectangle (1.80,-0.90);
+  \fill[black] (1.80,-0.60) rectangle (2.10,-0.90);
+  \fill[black] (0.00,-0.90) rectangle (0.30,-1.20);
+  \fill[black] (0.60,-0.90) rectangle (0.90,-1.20);
+  \fill[black] (1.50,-0.90) rectangle (1.80,-1.20);
+  \fill[black] (0.00,-1.20) rectangle (0.30,-1.50);
+  \fill[black] (0.60,-1.20) rectangle (0.90,-1.50);
+  \fill[black] (1.50,-1.20) rectangle (1.80,-1.50);
+  \fill[black] (1.80,-1.20) rectangle (2.10,-1.50);
+  \fill[black] (2.10,-1.20) rectangle (2.40,-1.50);
+  \fill[black] (0.00,-1.50) rectangle (0.30,-1.80);
+  \fill[black] (1.20,-1.50) rectangle (1.50,-1.80);
+  \fill[black] (0.30,-1.80) rectangle (0.60,-2.10);
+  \fill[black] (0.60,-1.80) rectangle (0.90,-2.10);
+  \fill[black] (1.80,-1.80) rectangle (2.10,-2.10);
+  \fill[black] (0.60,-2.10) rectangle (0.90,-2.40);
+  \fill[black] (1.20,-2.10) rectangle (1.50,-2.40);
+  \fill[black] (2.10,-2.10) rectangle (2.40,-2.40);
+  \fill[black] (0.00,-2.40) rectangle (0.30,-2.70);
+  \fill[black] (0.30,-2.40) rectangle (0.60,-2.70);
+  \fill[black] (0.60,-2.40) rectangle (0.90,-2.70);
+  \fill[black] (1.50,-2.40) rectangle (1.80,-2.70);
+  \draw[red,very thick] (0.92,-0.02) rectangle (1.18,-0.28);
+  \draw[red,very thick] (0.92,-0.32) rectangle (1.18,-0.58);
+  \draw[red,very thick] (1.22,-0.62) rectangle (1.48,-0.88);
+  \draw[red,very thick] (1.52,-0.62) rectangle (1.78,-0.88);
+  \draw[red,very thick] (0.02,-1.52) rectangle (0.28,-1.78);
+  \draw[red,very thick] (0.32,-1.52) rectangle (0.58,-1.78);
+  \draw[red,very thick] (0.92,-1.82) rectangle (1.18,-2.08);
+  \draw[red,very thick] (1.22,-1.82) rectangle (1.48,-2.08);
+  \draw[red,very thick] (1.52,-1.82) rectangle (1.78,-2.08);
+  \draw[red,very thick] (2.12,-1.82) rectangle (2.38,-2.08);
+  \draw[red,very thick] (0.02,-2.12) rectangle (0.28,-2.38);
+  \draw[red,very thick] (0.62,-2.12) rectangle (0.88,-2.38);
+  \draw[gray!45] (0,0) grid[step=0.3cm] (2.40,-2.70);
+  \draw[black!70,thick] (0,0) rectangle (2.40,-2.70);
+    % MAP arrow
+    \draw[->,thick] (2.62,-1.05) to[out=10,in=192] (5.72,-0.30);
+    \node[font=\footnotesize, align=center] at (4.10,-1.35) {MAP over learned\\rollouts (Alg.~1)};
+    \begin{scope}[xshift=1.4cm]
+    \node[anchor=south, font=\small] at (5.6,0.12) {recovered $(\hat{x}_0,\hat{x}_1)$};
+  \fill[black] (4.40,0.00) rectangle (4.70,-0.30);
+  \fill[black] (5.90,0.00) rectangle (6.20,-0.30);
+  \draw[gray!45] (4.40,0.00) rectangle (6.80,-0.30);
+  \draw[gray!45] (4.70,0.00) rectangle (5.00,-0.30);
+  \draw[gray!45] (5.00,0.00) rectangle (5.30,-0.30);
+  \draw[gray!45] (5.30,0.00) rectangle (5.60,-0.30);
+  \draw[gray!45] (5.60,0.00) rectangle (5.90,-0.30);
+  \draw[gray!45] (5.90,0.00) rectangle (6.20,-0.30);
+  \draw[gray!45] (6.20,0.00) rectangle (6.50,-0.30);
+  \fill[black] (4.70,-0.30) rectangle (5.00,-0.60);
+  \fill[black] (5.00,-0.30) rectangle (5.30,-0.60);
+  \fill[black] (5.30,-0.30) rectangle (5.60,-0.60);
+  \fill[black] (5.60,-0.30) rectangle (5.90,-0.60);
+  \fill[black] (6.20,-0.30) rectangle (6.50,-0.60);
+  \draw[gray!45] (4.40,-0.30) rectangle (6.80,-0.60);
+  \draw[gray!45] (4.70,-0.30) rectangle (5.00,-0.60);
+  \draw[gray!45] (5.00,-0.30) rectangle (5.30,-0.60);
+  \draw[gray!45] (5.30,-0.30) rectangle (5.60,-0.60);
+  \draw[gray!45] (5.60,-0.30) rectangle (5.90,-0.60);
+  \draw[gray!45] (5.90,-0.30) rectangle (6.20,-0.60);
+  \draw[gray!45] (6.20,-0.30) rectangle (6.50,-0.60);
+  \draw[black!70,thick] (4.40,0.00) rectangle (6.80,-0.60);
+    \node[anchor=north, font=\footnotesize] at (5.6,-1.78) {true $(x_0,x_1)$};
+  \fill[black] (4.40,-1.05) rectangle (4.70,-1.35);
+  \fill[black] (5.90,-1.05) rectangle (6.20,-1.35);
+  \draw[gray!45] (4.40,-1.05) rectangle (6.80,-1.35);
+  \draw[gray!45] (4.70,-1.05) rectangle (5.00,-1.35);
+  \draw[gray!45] (5.00,-1.05) rectangle (5.30,-1.35);
+  \draw[gray!45] (5.30,-1.05) rectangle (5.60,-1.35);
+  \draw[gray!45] (5.60,-1.05) rectangle (5.90,-1.35);
+  \draw[gray!45] (5.90,-1.05) rectangle (6.20,-1.35);
+  \draw[gray!45] (6.20,-1.05) rectangle (6.50,-1.35);
+  \fill[black] (4.70,-1.35) rectangle (5.00,-1.65);
+  \fill[black] (5.00,-1.35) rectangle (5.30,-1.65);
+  \fill[black] (5.30,-1.35) rectangle (5.60,-1.65);
+  \fill[black] (5.60,-1.35) rectangle (5.90,-1.65);
+  \fill[black] (6.20,-1.35) rectangle (6.50,-1.65);
+  \draw[gray!45] (4.40,-1.35) rectangle (6.80,-1.65);
+  \draw[gray!45] (4.70,-1.35) rectangle (5.00,-1.65);
+  \draw[gray!45] (5.00,-1.35) rectangle (5.30,-1.65);
+  \draw[gray!45] (5.30,-1.35) rectangle (5.60,-1.65);
+  \draw[gray!45] (5.60,-1.35) rectangle (5.90,-1.65);
+  \draw[gray!45] (5.90,-1.35) rectangle (6.20,-1.65);
+  \draw[gray!45] (6.20,-1.35) rectangle (6.50,-1.65);
+  \draw[black!70,thick] (4.40,-1.05) rectangle (6.80,-1.65);
+    \node[green!50!black, font=\Large\bfseries] at (5.60,-0.82) {$=$};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{\textbf{A worked instance.} A hidden Rule-110 initial condition is rolled forward $H=8$
+  steps and revealed through the bit-flip channel, which flips \textbf{12 of the 72 bits} (red
+  outlines). From this noisy trajectory alone, the reasoner's MAP over learned rollouts
+  (Algorithm~1) recovers the true first two rows $(x_0, x_1)$ \emph{exactly}: the recovered pair
+  (upper right) equals the truth (lower right). $L=8$, noise $0.2$, seed 2.}
+  \label{fig:example}
+\end{figure}

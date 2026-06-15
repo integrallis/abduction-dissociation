@@ -1,0 +1,249 @@
+% refs.bib --- bibliography for the abduction / learned-simulation-reasoner paper.
+%
+% Entries verified against primary sources (arXiv / ACL Anthology) before submission.
+% Note: "Inverse CA" in AutomataGPT denotes RULE recovery, not initial-condition recovery.
+
+@article{sbi2020,
+  author  = {Cranmer, Kyle and Brehmer, Johann and Louppe, Gilles},
+  title   = {The frontier of simulation-based inference},
+  journal = {Proceedings of the National Academy of Sciences},
+  year    = {2020},
+  volume  = {117},
+  number  = {48},
+  pages   = {30055--30062},
+  doi     = {10.1073/pnas.1912789117}
+}
+
+@article{carrassi,
+  author  = {Carrassi, Alberto and Bocquet, Marc and Demaeyer, Jonathan
+             and Grudzien, Colin and Raanes, Patrick and Vannitsem, St\'ephane},
+  title   = {Data assimilation for chaotic dynamics},
+  journal = {arXiv preprint arXiv:2010.07063},
+  year    = {2020},
+  eprint  = {2010.07063},
+  archivePrefix = {arXiv}
+}
+
+@article{elser,
+  author  = {Elser, Veit},
+  title   = {Reconstructing cellular automata rules from observations at nonconsecutive times},
+  journal = {arXiv preprint arXiv:2012.02179},
+  year    = {2020},
+  eprint  = {2012.02179},
+  archivePrefix = {arXiv}
+}
+
+@article{reversalcurse,
+  author  = {Berglund, Lukas and Tong, Meg and Kaufmann, Max and Balesni, Mikita
+             and Stickland, Asa Cooper and Korbak, Tomasz and Evans, Owain},
+  title   = {The Reversal Curse: {LLMs} trained on ``{A} is {B}'' fail to learn ``{B} is {A}''},
+  journal = {arXiv preprint arXiv:2309.12288},
+  year    = {2023},
+  eprint  = {2309.12288},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{logiclm,
+  author    = {Pan, Liangming and Albalak, Alon and Wang, Xinyi and Wang, William Yang},
+  title     = {Logic-{LM}: Empowering Large Language Models with Symbolic Solvers
+               for Faithful Logical Reasoning},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2023},
+  year      = {2023},
+  pages     = {3806--3824}
+}
+
+@article{muzero,
+  author  = {Schrittwieser, Julian and Antonoglou, Ioannis and Hubert, Thomas
+             and Simonyan, Karen and Sifre, Laurent and Schmitt, Simon
+             and Guez, Arthur and Lockhart, Edward and Hassabis, Demis
+             and Graepel, Thore and Lillicrap, Timothy and Silver, David},
+  title   = {Mastering {Atari}, {Go}, chess and shogi by planning with a learned model},
+  journal = {Nature},
+  year    = {2020},
+  volume  = {588},
+  number  = {7839},
+  pages   = {604--609},
+  doi     = {10.1038/s41586-020-03051-4}
+}
+
+@article{dreamerv3,
+  author  = {Hafner, Danijar and Pasukonis, Jurgis and Ba, Jimmy and Lillicrap, Timothy},
+  title   = {Mastering Diverse Domains through World Models},
+  journal = {arXiv preprint arXiv:2301.04104},
+  year    = {2023},
+  eprint  = {2301.04104},
+  archivePrefix = {arXiv}
+}
+
+@article{automatagpt,
+  author  = {Berkovich, Jaime A. and David, Noah S. and Buehler, Markus J.},
+  title   = {{AutomataGPT}: Forecasting and Ruleset Inference for Two-Dimensional Cellular Automata},
+  journal = {arXiv preprint arXiv:2506.17333},
+  year    = {2025},
+  eprint  = {2506.17333},
+  archivePrefix = {arXiv}
+}
+
+@article{illusionthinking,
+  author  = {Shojaee, Parshin and Mirzadeh, Iman and Alizadeh, Keivan
+             and Horton, Maxwell and Bengio, Samy and Farajtabar, Mehrdad},
+  title   = {The Illusion of Thinking: Understanding the Strengths and Limitations
+             of Reasoning Models via the Lens of Problem Complexity},
+  journal = {arXiv preprint arXiv:2506.06941},
+  year    = {2025},
+  eprint  = {2506.06941},
+  archivePrefix = {arXiv}
+}
+
+@article{codeinvert,
+  author  = {Maveli, Nickil and Vergari, Antonio and Cohen, Shay B.},
+  title   = {Can {LLMs} Compress (and Decompress)? Evaluating Code Understanding and Execution via Invertibility},
+  journal = {arXiv preprint arXiv:2601.13398},
+  year    = {2026},
+  eprint  = {2601.13398},
+  archivePrefix = {arXiv}
+}
+
+@misc{conwayreverse,
+  author       = {{Kaggle}},
+  title        = {Conway's Reverse Game of Life},
+  howpublished = {Kaggle competition, \url{https://www.kaggle.com/c/conways-reverse-game-of-life-2020}},
+  year         = {2020},
+  note         = {See also cjm715's roll-forward candidate-search solution,
+                  \url{https://github.com/cjm715/kaggle-game-of-life}}
+}
+
+% ---- Learned-simulator inverse inference / data assimilation (closest method neighbors) ----
+
+@inproceedings{mccabe2021,
+  author    = {McCabe, Michael and Brown, Jed},
+  title     = {Learning to Assimilate in Chaotic Dynamical Systems},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2021},
+  eprint    = {2111.01058},
+  archivePrefix = {arXiv}
+}
+
+@article{aushev2024,
+  author  = {Aushev, Alexander and Tran, Thong and Pesonen, Henri
+             and Howes, Andrew and Kaski, Samuel},
+  title   = {Likelihood-Free Inference in State-Space Models with Unknown Dynamics},
+  journal = {Statistics and Computing},
+  year    = {2024},
+  volume  = {34},
+  doi     = {10.1007/s11222-023-10339-8}
+}
+
+% ---- Directional asymmetry: reverse-direction failure is partly train-objective dependent ----
+
+@article{reversetraining,
+  author  = {Golovneva, Olga and Allen-Zhu, Zeyuan and Weston, Jason and Sukhbaatar, Sainbayar},
+  title   = {Reverse Training to Nurse the Reversal Curse},
+  journal = {arXiv preprint arXiv:2403.13799},
+  year    = {2024},
+  eprint  = {2403.13799},
+  archivePrefix = {arXiv}
+}
+
+% ---- Planning / control benchmarks (the matched-axis anchor) ----
+
+@inproceedings{planbench,
+  author    = {Valmeekam, Karthik and Marquez, Matthew and Olmo, Alberto
+               and Sreedharan, Sarath and Kambhampati, Subbarao},
+  title     = {{PlanBench}: An Extensible Benchmark for Evaluating Large Language Models
+               on Planning and Reasoning about Change},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS),
+               Datasets and Benchmarks Track},
+  year      = {2023},
+  eprint    = {2206.10498},
+  archivePrefix = {arXiv}
+}
+
+@article{o1planbench,
+  author  = {Valmeekam, Karthik and Stechly, Kaya and Kambhampati, Subbarao},
+  title   = {{LLMs} Still Can't Plan; Can {LRMs}? A Preliminary Evaluation of {OpenAI}'s o1 on {PlanBench}},
+  journal = {arXiv preprint arXiv:2409.13373},
+  year    = {2024},
+  eprint  = {2409.13373},
+  archivePrefix = {arXiv}
+}
+
+% ---- Inference-mode and causal/counterfactual/abductive benchmarks ----
+
+@inproceedings{logidynamics,
+  author    = {Zheng, Tianshi and Cheng, Jiayang and Li, Chunyang and Shi, Haochen
+               and Wang, Zihao and Bai, Jiaxin and Song, Yangqiu
+               and Wong, Ginny Y. and See, Simon},
+  title     = {{LogiDynamics}: Unraveling the Dynamics of Inductive, Abductive
+               and Deductive Logical Inferences in {LLM} Reasoning},
+  booktitle = {Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year      = {2025},
+  eprint    = {2502.11176},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{counterbench,
+  author    = {Chen, Yuefei and Singh, Vivek K. and Ma, Jing and Tang, Ruixiang},
+  title     = {{CounterBench}: Evaluating and Improving Counterfactual Reasoning
+               in Large Language Models},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  year      = {2026},
+  eprint    = {2502.11008},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{cladder,
+  author    = {Jin, Zhijing and Chen, Yuen and Leeb, Felix and Gresele, Luigi
+               and Kamal, Ojasv and Lyu, Zhiheng and Blin, Kevin
+               and Gonzalez Adauto, Fernando and Kleiman-Weiner, Max
+               and Sachan, Mrinmaya and Sch\"olkopf, Bernhard},
+  title     = {{CLadder}: Assessing Causal Reasoning in Language Models},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2023},
+  eprint    = {2312.04350},
+  archivePrefix = {arXiv}
+}
+
+@article{semeval2026aer,
+  author  = {Cao, Pengfei and Yang, Mingxuan and Chen, Yubo and Zhang, Chenlong
+             and Liu, Mingxuan and Liu, Kang and Zhao, Jun},
+  title   = {{SemEval}-2026 Task 12: Abductive Event Reasoning: Towards Real-World
+             Event Causal Inference for Large Language Models},
+  journal = {arXiv preprint arXiv:2603.21720},
+  year    = {2026},
+  eprint  = {2603.21720},
+  archivePrefix = {arXiv}
+}
+
+@article{graphofstates,
+  author  = {Luo, Yu and Gao, Rongchen and Teng, Lu and Wen, Xidao and Jiang, Jiamin
+             and Zhang, Qingliang and Sun, Yongqian and Zhang, Shenglin
+             and Feng, Jiasong and Liu, Tong and Zhang, Wenjie and Pei, Dan},
+  title   = {Graph of States: Solving Abductive Tasks with Large Language Models},
+  journal = {arXiv preprint arXiv:2603.21250},
+  year    = {2026},
+  eprint  = {2603.21250},
+  archivePrefix = {arXiv}
+}
+
+% ---- Program-aided / executable reasoning (why tool-augmented search closes the gap) ----
+
+@article{pot,
+  author  = {Chen, Wenhu and Ma, Xueguang and Wang, Xinyi and Cohen, William W.},
+  title   = {Program of Thoughts Prompting: Disentangling Computation from Reasoning
+             for Numerical Reasoning Tasks},
+  journal = {Transactions on Machine Learning Research (TMLR)},
+  year    = {2023},
+  eprint  = {2211.12588},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{pal,
+  author    = {Gao, Luyu and Madaan, Aman and Zhou, Shuyan and Alon, Uri
+               and Liu, Pengfei and Yang, Yiming and Callan, Jamie and Neubig, Graham},
+  title     = {{PAL}: Program-aided Language Models},
+  booktitle = {Proceedings of the 40th International Conference on Machine Learning (ICML)},
+  year      = {2023},
+  eprint    = {2211.10435},
+  archivePrefix = {arXiv}
+}

@@ -1,0 +1,120 @@
+% FIGURE --- the two playgrounds: the CA (space-time, irreducible 110 vs reducible 90)
+% and Sokoban. CA grids are REAL second-order traces (pce/ca/env.py), seed shown.
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[font=\small]
+    % ---------- (a) Cellular automaton: two real space-time traces ----------
+    \node[anchor=west, font=\small\bfseries] at (-0.1,0.95) {(a) Reversible 1-D cellular automaton (space $\rightarrow$, time $\downarrow$)};
+    \draw[-{Latex[length=1.6mm]}, gray!70] (-0.35,-0.05) -- (-0.35,-1.95) node[midway,rotate=90,anchor=south,font=\footnotesize,gray] {time};
+    % Rule 110 space-time
+    \begin{scope}[xshift=0.00cm]
+    \fill[black] (1.44,0.00) rectangle (1.68,-0.24);
+    \fill[black] (1.68,0.00) rectangle (1.92,-0.24);
+    \fill[black] (1.20,-0.24) rectangle (1.44,-0.48);
+    \fill[black] (1.68,-0.24) rectangle (1.92,-0.48);
+    \fill[black] (0.96,-0.48) rectangle (1.20,-0.72);
+    \fill[black] (1.20,-0.48) rectangle (1.44,-0.72);
+    \fill[black] (0.72,-0.72) rectangle (0.96,-0.96);
+    \fill[black] (0.96,-0.72) rectangle (1.20,-0.96);
+    \fill[black] (1.68,-0.72) rectangle (1.92,-0.96);
+    \fill[black] (0.48,-0.96) rectangle (0.72,-1.20);
+    \fill[black] (0.72,-0.96) rectangle (0.96,-1.20);
+    \fill[black] (1.20,-0.96) rectangle (1.44,-1.20);
+    \fill[black] (1.44,-0.96) rectangle (1.68,-1.20);
+    \fill[black] (1.68,-0.96) rectangle (1.92,-1.20);
+    \fill[black] (0.24,-1.20) rectangle (0.48,-1.44);
+    \fill[black] (0.48,-1.20) rectangle (0.72,-1.44);
+    \fill[black] (1.20,-1.20) rectangle (1.44,-1.44);
+    \fill[black] (0.00,-1.44) rectangle (0.24,-1.68);
+    \fill[black] (0.24,-1.44) rectangle (0.48,-1.68);
+    \fill[black] (0.72,-1.44) rectangle (0.96,-1.68);
+    \fill[black] (0.96,-1.44) rectangle (1.20,-1.68);
+    \fill[black] (1.44,-1.44) rectangle (1.68,-1.68);
+    \fill[black] (1.68,-1.44) rectangle (1.92,-1.68);
+    \fill[black] (0.00,-1.68) rectangle (0.24,-1.92);
+    \fill[black] (0.72,-1.68) rectangle (0.96,-1.92);
+    \fill[black] (0.96,-1.68) rectangle (1.20,-1.92);
+    \fill[black] (1.44,-1.68) rectangle (1.68,-1.92);
+    \fill[black] (1.68,-1.68) rectangle (1.92,-1.92);
+    \fill[black] (2.88,-1.68) rectangle (3.12,-1.92);
+    \draw[gray!45] (0,0) grid[step=0.24cm] (3.12,-1.92);
+    \draw[black!70, thick] (0,0) rectangle (3.12,-1.92);
+    \node[font=\footnotesize, align=center] at (1.56,-2.28) {Rule 110\\ \emph{irreducible}};
+    \end{scope}
+    % Rule 90 space-time
+    \begin{scope}[xshift=4.02cm]
+    \fill[black] (1.44,0.00) rectangle (1.68,-0.24);
+    \fill[black] (1.68,0.00) rectangle (1.92,-0.24);
+    \fill[black] (1.20,-0.24) rectangle (1.44,-0.48);
+    \fill[black] (1.68,-0.24) rectangle (1.92,-0.48);
+    \fill[black] (1.92,-0.24) rectangle (2.16,-0.48);
+    \fill[black] (0.96,-0.48) rectangle (1.20,-0.72);
+    \fill[black] (1.44,-0.48) rectangle (1.68,-0.72);
+    \fill[black] (1.92,-0.48) rectangle (2.16,-0.72);
+    \fill[black] (2.16,-0.48) rectangle (2.40,-0.72);
+    \fill[black] (0.72,-0.72) rectangle (0.96,-0.96);
+    \fill[black] (1.20,-0.72) rectangle (1.44,-0.96);
+    \fill[black] (1.68,-0.72) rectangle (1.92,-0.96);
+    \fill[black] (2.16,-0.72) rectangle (2.40,-0.96);
+    \fill[black] (2.40,-0.72) rectangle (2.64,-0.96);
+    \fill[black] (0.48,-0.96) rectangle (0.72,-1.20);
+    \fill[black] (0.96,-0.96) rectangle (1.20,-1.20);
+    \fill[black] (1.44,-0.96) rectangle (1.68,-1.20);
+    \fill[black] (1.92,-0.96) rectangle (2.16,-1.20);
+    \fill[black] (2.40,-0.96) rectangle (2.64,-1.20);
+    \fill[black] (2.64,-0.96) rectangle (2.88,-1.20);
+    \fill[black] (0.24,-1.20) rectangle (0.48,-1.44);
+    \fill[black] (0.72,-1.20) rectangle (0.96,-1.44);
+    \fill[black] (1.20,-1.20) rectangle (1.44,-1.44);
+    \fill[black] (1.68,-1.20) rectangle (1.92,-1.44);
+    \fill[black] (2.16,-1.20) rectangle (2.40,-1.44);
+    \fill[black] (2.64,-1.20) rectangle (2.88,-1.44);
+    \fill[black] (2.88,-1.20) rectangle (3.12,-1.44);
+    \fill[black] (0.48,-1.44) rectangle (0.72,-1.68);
+    \fill[black] (0.96,-1.44) rectangle (1.20,-1.68);
+    \fill[black] (1.44,-1.44) rectangle (1.68,-1.68);
+    \fill[black] (1.92,-1.44) rectangle (2.16,-1.68);
+    \fill[black] (2.40,-1.44) rectangle (2.64,-1.68);
+    \fill[black] (2.88,-1.44) rectangle (3.12,-1.68);
+    \fill[black] (0.00,-1.68) rectangle (0.24,-1.92);
+    \fill[black] (0.72,-1.68) rectangle (0.96,-1.92);
+    \fill[black] (1.20,-1.68) rectangle (1.44,-1.92);
+    \fill[black] (1.68,-1.68) rectangle (1.92,-1.92);
+    \fill[black] (2.16,-1.68) rectangle (2.40,-1.92);
+    \fill[black] (2.64,-1.68) rectangle (2.88,-1.92);
+    \fill[black] (2.88,-1.68) rectangle (3.12,-1.92);
+    \draw[gray!45] (0,0) grid[step=0.24cm] (3.12,-1.92);
+    \draw[black!70, thick] (0,0) rectangle (3.12,-1.92);
+    \node[font=\footnotesize, align=center] at (1.56,-2.28) {Rule 90\\ \emph{reducible}};
+    \end{scope}
+
+    % ---------- (b) Sokoban board ----------
+    \begin{scope}[xshift=8.55cm, yshift=-0.02cm]
+      \def\cs{0.42}
+      \node[anchor=west, font=\small\bfseries] at (-0.1,0.97) {(b) Sokoban};
+      \fill[gray!8] (0,0) rectangle (6*\cs,-6*\cs);
+      \foreach \x in {0,...,5}{\fill[gray!55] (\x*\cs,0) rectangle ({(\x+1)*\cs},-\cs);
+        \fill[gray!55] (\x*\cs,-5*\cs) rectangle ({(\x+1)*\cs},-6*\cs);}
+      \foreach \y in {0,...,5}{\fill[gray!55] (0,-\y*\cs) rectangle (\cs,{-(\y+1)*\cs});
+        \fill[gray!55] (5*\cs,-\y*\cs) rectangle (6*\cs,{-(\y+1)*\cs});}
+      \fill[gray!55] (3*\cs,-3*\cs) rectangle (4*\cs,-4*\cs);                       % interior wall
+      \draw[red!75!black, thick] ({4*\cs+\cs/2},{-2*\cs-\cs/2}) circle (0.12);       % goal
+      \node[red!75!black, font=\scriptsize] at ({4*\cs+\cs/2},{-2*\cs-\cs/2}) {$\times$};
+      \fill[orange!65!brown] ({2*\cs+0.05},{-2*\cs-0.05}) rectangle ({3*\cs-0.05},{-3*\cs+0.05}); % box
+      \fill[blue!60] ({1*\cs+\cs/2},{-2*\cs-\cs/2}) circle (0.12);                  % pusher
+      \draw[-{Latex[length=1.5mm]}, thick] ({1.52*\cs},{-2.5*\cs}) -- ({1.96*\cs},{-2.5*\cs}); % push
+      \draw[gray!35] (0,0) grid[step=\cs cm] (6*\cs,-6*\cs);
+      \node[font=\footnotesize, align=center, text width=2.9cm] at (3*\cs,-3.05) {pusher \tikz\fill[blue!60] circle(1.6pt); \, box \tikz\fill[orange!65!brown](0,0)rectangle(4pt,4pt); \, goal \tikz\node[red!75!black,font=\tiny]{$\times$};};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{\textbf{The two playgrounds.} \textbf{(a)} Real space-time traces of the
+  second-order CA from one seed (width-13 ring shown; the rule is width-independent). Each row
+  is one configuration; time runs down. \emph{Rule 110} (left) is computationally
+  \emph{irreducible} (class-4, Turing-complete): its irregular pattern cannot be predicted
+  faster than by simulating every step. \emph{Rule 90} (right) is \emph{reducible} (additive,
+  $f(a,b,c)=a\oplus c$): the regular Sierpinski structure means a closed-form shortcut exists,
+  so it is our control. \textbf{(b)} A Sokoban instance: a pusher moves on a walled grid and
+  shoves boxes onto goals. Pushes are \emph{irreversible} (a box shoved against a wall cannot
+  be pulled back), so this world is structurally unlike the reversible CA.}
+  \label{fig:domains}
+\end{figure}

@@ -1,0 +1,42 @@
+% FIGURE --- the reasoner mechanism: learn a forward model from black-box
+% transitions (top), then invert it by MAP over learned rollouts (bottom).
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[font=\footnotesize, >={Latex[length=1.6mm]},
+      box/.style={draw, rounded corners, align=center, inner xsep=4pt, inner ysep=3pt,
+                  minimum height=0.85cm, fill=blue!4},
+      tbox/.style={draw, rounded corners, align=center, inner xsep=4pt, inner ysep=3pt,
+                   minimum height=0.85cm, fill=orange!8},
+      ar/.style={->, thick}]
+    % --- training path (top) ---
+    \node[tbox] (tr) {Black-box transitions\\$(s,\,s')$};
+    \node[tbox, right=0.7cm of tr] (rule) {Learned local rule $f_\theta$\\{\scriptsize shared radius-1 MLP}};
+    \draw[ar] (tr) -- (rule) node[midway, above, font=\scriptsize] {train};
+    % --- abduction path (bottom) ---
+    \node[box, below=0.95cm of tr] (obs) {Noisy trajectory\\$\tilde{y}_{0:T}$};
+    \node[box, right=0.45cm of obs] (enum) {Enumerate\\candidate ICs $\{x_0\}$};
+    \node[box, right=0.45cm of enum] (sim) {Roll forward\\$T$ steps via $f_\theta$};
+    \node[box, right=0.45cm of sim] (score) {Score vs $\tilde{y}$\\{\scriptsize per-cell likelihood}};
+    \node[box, right=0.45cm of score] (map) {MAP\\$\arg\max$};
+    \node[box, right=0.45cm of map] (out) {Recovered\\$\hat{x}_0$};
+    \draw[ar] (obs) -- (enum);
+    \draw[ar] (enum) -- (sim);
+    \draw[ar] (sim) -- (score);
+    \draw[ar] (score) -- (map);
+    \draw[ar] (map) -- (out);
+    % the learned model is the ONLY dynamics used in the loop
+    \draw[ar, dashed] (rule.south) -- (sim.north)
+      node[midway, right=1pt, font=\scriptsize, align=left] {the only\\dynamics};
+    % the iteration: a loop-back arrow BELOW the row, clear of the dashed dynamics arrow above
+    \draw[->, dashed, gray, >={Latex[length=1.4mm]}] (map.south) to[out=-90, in=-90, looseness=0.45] (enum.south);
+    \node[font=\scriptsize, gray] at ($(enum.south)!0.5!(map.south)+(0,-0.62)$) {repeat over all candidates $\rightarrow$ pick the best};
+  \end{tikzpicture}
+  \caption{\textbf{The reasoner.} A forward model is \emph{learned} from black-box
+  \texttt{(state, [action,] next-state)} transitions (top): one weight-shared radius-1 rule $f_\theta$,
+  applied at every cell and every system size, so it generalizes across width by construction.
+  Abduction (bottom) is maximum-a-posteriori inference over that learned model: enumerate
+  candidate initial conditions, roll each one forward under $f_\theta$, score the simulated
+  trajectory against the noisy observation, and return the best (Algorithm~1).
+  The true environment is never queried during the search; $f_\theta$ supplies all dynamics.}
+  \label{fig:reasoner}
+\end{figure}
